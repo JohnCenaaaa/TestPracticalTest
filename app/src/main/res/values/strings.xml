@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestPracticalTest</string>
+    <string-array name="select">
+        <item>apa</item>
+        <item>lu</item>
+        <item>mao</item>
+    </string-array>
+</resources>
