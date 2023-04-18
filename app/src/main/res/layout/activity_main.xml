@@ -48,15 +48,53 @@
 
     <TextView
         android:id="@+id/Selection"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="525dp"
         android:text="Your Selection"
+        android:textAlignment="center"
         android:textSize="@dimen/TextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/List" />
+
+    <EditText
+        android:id="@+id/Score"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Enter Score"
+        android:inputType="text"
+        android:text="Score"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <Button
+        android:id="@+id/Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="@+id/Score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Score"
+        app:layout_constraintTop_toTopOf="@+id/Score" />
+
+    <TextView
+        android:id="@+id/Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Score"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
