@@ -1,5 +1,7 @@
 package com.example.testpracticaltest
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -44,6 +46,22 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             val resultText : TextView = findViewById(R.id.Result)
             resultText.text = "Result: " + " " + result
         }
+            findViewById<Button>(R.id.Contact).setOnClickListener{
+                startActivity(email())
+            }
+    }
+    private fun email(): Intent? {
+        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        emailIntent.data = Uri.parse("mailto")
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("aaa@gmail.com"))
+        emailIntent.putExtra(
+            Intent.EXTRA_TEXT,
+            "Name: ${findViewById<EditText>(R.id.editTextText).text}\n"
+                    +"Course: ${findViewById<TextView>(R.id.Selection).text}\n"
+                    +"Score: ${findViewById<EditText>(R.id.Score).text}\n"
+                    +"Grade: ${findViewById<TextView>(R.id.Result).text}"
+        )
+        return emailIntent
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
